@@ -6,7 +6,7 @@
 /*   By: gtourdia <@student.42mulhouse.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 15:28:30 by gtourdia          #+#    #+#             */
-/*   Updated: 2025/11/17 15:52:08 by gtourdia         ###   ########.fr       */
+/*   Updated: 2025/11/17 17:47:30 by gtourdia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,14 @@ int	print_arg(va_list *arg, char c)
 {
 	if (c == 's')
 		return (ft_printf_putstr(va_arg(*arg, char*)));
-	if (c == 'd')
+	if (c == 'd' || c == 'i')
 		return (ft_printf_putnbr(va_arg(*arg, int)));
 	if (c == 'c')
 		return (ft_printf_putchar(va_arg(*arg, int)));
 	if (c == 'p')
 		return (ft_printf_putptr(va_arg(*arg, long)));
+	if (c == '%')
+		return (write(1, "%", 1));
 	return (0);
 }
 
