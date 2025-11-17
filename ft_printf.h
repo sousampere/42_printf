@@ -6,7 +6,7 @@
 /*   By: gtourdia <@student.42mulhouse.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 18:59:43 by gtourdia          #+#    #+#             */
-/*   Updated: 2025/11/17 19:05:44 by gtourdia         ###   ########.fr       */
+/*   Updated: 2025/11/17 19:50:10 by gtourdia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int	ft_printf_putnbr(int nbr);
 int	ft_printf_putchar(char c);
 int	ft_printf_putptr(long n);
 int	ft_printf_putxmin(long value);
+int	ft_printf_putxmaj(long value);
 
 #endif

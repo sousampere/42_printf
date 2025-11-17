@@ -6,14 +6,14 @@
 /*   By: gtourdia <@student.42mulhouse.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 18:06:46 by gtourdia          #+#    #+#             */
-/*   Updated: 2025/11/17 19:42:24 by gtourdia         ###   ########.fr       */
+/*   Updated: 2025/11/17 19:51:37 by gtourdia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft/libft.h"
 
-int	put_hex_positive(long value)
+static int	put_hex_positive(long value)
 {
 	int		i;
 	char	str[10];
@@ -33,7 +33,7 @@ int	put_hex_positive(long value)
 	return (0);
 }
 
-int put_hex_negative(long value)
+static int put_hex_negative(long value)
 {
 	int		i;
 	char	str[10];
@@ -43,8 +43,8 @@ int put_hex_negative(long value)
 	str[9] = '\0';
 	if (value < 0)
 	{
-		ft_memset(&str[0], 'f', 10);
-		hex_tab = "ABCDEF9876543210";
+		ft_memset(&str[0], 'F', 10);
+		hex_tab = "FEDCBA9876543210";
 		value *= -1;
 		value -= 1;
 	}
@@ -59,7 +59,7 @@ int put_hex_negative(long value)
 	return (0);
 }
 
-int	ft_printf_putxmin(long value)
+int	ft_printf_putxmaj(long value)
 {
 	if (value > 0)
 		return (put_hex_positive(value));
