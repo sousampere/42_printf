@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_putstr.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtourdia <@student.42mulhouse.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/16 18:59:43 by gtourdia          #+#    #+#             */
-/*   Updated: 2025/11/17 11:08:51 by gtourdia         ###   ########.fr       */
+/*   Created: 2025/11/17 10:55:53 by gtourdia          #+#    #+#             */
+/*   Updated: 2025/11/17 10:57:47 by gtourdia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdio.h>
-# include <stdarg.h>
-# include <unistd.h>
+int	ft_printf_putstr(char *str)
+{
+	int	i;
 
-int	ft_printf(const char *, ...)__attribute__((format(printf, 1, 2)));
-
-int	ft_printf_putstr(char *str);
-int	ft_printf_putnbr(int nbr);
-
-#endif
+	i = -1;
+	while (str[++i])
+		write(1, &str[i], 1);
+	return (i);
+}

@@ -6,11 +6,12 @@
 /*   By: gtourdia <@student.42mulhouse.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 15:28:30 by gtourdia          #+#    #+#             */
-/*   Updated: 2025/11/16 19:35:10 by gtourdia         ###   ########.fr       */
+/*   Updated: 2025/11/17 11:30:28 by gtourdia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
+#include "ft_printf.h"
 
 int	count_args(const char *str)
 {
@@ -34,11 +35,39 @@ int	count_args(const char *str)
 	return (count);
 }
 
+int	print_arg(va_list *arg, char c)
+{
+	if (c == 's')
+		return (ft_printf_putstr(va_arg(*arg, char*)));
+	if (c == 'd')
+		return (ft_printf_putnbr(va_arg(*arg, int)));
+	return (0);
+}
+
 int	ft_printf(const char *s, ...)
 {
 	va_list	args;
+	int		i;
+	int		count;
+	int		pfvalue;
 
 	va_start(args, s);
-	while ()
+	i = -1;
+	count = -1;
+	pfvalue = 0;
+	while (s[++i])
+	{
+		if (s[i] != '%')
+		{
+			write(1, &s[i], 1);
+			pfvalue++;
+		}
+		else
+		{
+			pfvalue += print_arg(&args, s[++i]);
+			count++;
+		}
+	}
 	va_end(args);
+	return (pfvalue);
 }

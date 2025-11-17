@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_putnbr.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtourdia <@student.42mulhouse.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/16 18:59:43 by gtourdia          #+#    #+#             */
-/*   Updated: 2025/11/17 11:08:51 by gtourdia         ###   ########.fr       */
+/*   Created: 2025/11/17 11:07:34 by gtourdia          #+#    #+#             */
+/*   Updated: 2025/11/17 11:14:30 by gtourdia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdio.h>
-# include <stdarg.h>
-# include <unistd.h>
+int	ft_printf_putnbr(int n)
+{
+	char	c;
+	int		count;
 
-int	ft_printf(const char *, ...)__attribute__((format(printf, 1, 2)));
-
-int	ft_printf_putstr(char *str);
-int	ft_printf_putnbr(int nbr);
-
-#endif
+	if (n == -2147483648)
+		return (write(1, "-2147483648", 12));
+	if (n == 2147483647)
+		return (write(1, "2147483647", 11));
+	count = 0;
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		n *= -1;
+		count++;
+	}
+	if (n >= 10)
+		count += ft_printf_putnbr(n / 10);
+	c = (n % 10) + 48;
+	count += write(1, &c, 1);
+	return (count);
+}
