@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_putxmin.c                                :+:      :+:    :+:   */
+/*   ft_printf_putxmaj.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtourdia <@student.42mulhouse.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 18:06:46 by gtourdia          #+#    #+#             */
-/*   Updated: 2025/11/17 19:42:12 by gtourdia         ###   ########.fr       */
+/*   Updated: 2025/11/17 19:42:24 by gtourdia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	put_hex_positive(long value)
 
 	i = 8;
 	str[9] = '\0';
-	hex_tab = "0123456789abcdef";
+	hex_tab = "0123456789ABCDEF";
 	while (value > 0)
 	{
 		str[i] = hex_tab[value % 16];
@@ -44,7 +44,7 @@ int put_hex_negative(long value)
 	if (value < 0)
 	{
 		ft_memset(&str[0], 'f', 10);
-		hex_tab = "fedcba9876543210";
+		hex_tab = "ABCDEF9876543210";
 		value *= -1;
 		value -= 1;
 	}
