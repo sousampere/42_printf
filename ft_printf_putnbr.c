@@ -6,7 +6,7 @@
 /*   By: gtourdia <@student.42mulhouse.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 11:07:34 by gtourdia          #+#    #+#             */
-/*   Updated: 2025/11/17 11:14:30 by gtourdia         ###   ########.fr       */
+/*   Updated: 2025/11/17 17:47:16 by gtourdia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int	ft_printf_putnbr(int n)
 	int		count;
 
 	if (n == -2147483648)
-		return (write(1, "-2147483648", 12));
+		return (write(1, "-2147483648", 11));
 	if (n == 2147483647)
-		return (write(1, "2147483647", 11));
+		return (write(1, "2147483647", 10));
 	count = 0;
 	if (n < 0)
 	{
