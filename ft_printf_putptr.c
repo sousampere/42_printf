@@ -6,7 +6,7 @@
 /*   By: gtourdia <@student.42mulhouse.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 11:47:58 by gtourdia          #+#    #+#             */
-/*   Updated: 2025/11/17 17:26:59 by gtourdia         ###   ########.fr       */
+/*   Updated: 2025/11/17 17:29:33 by gtourdia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*make_str_hex_address(char *str)
 		ii++;
 		len--;
 	}
-	hex_str[11] = '\0';
+	hex_str[ft_strlen(str) + 2] = '\0';
 	return (hex_str);
 }
 
