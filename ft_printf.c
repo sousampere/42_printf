@@ -6,7 +6,7 @@
 /*   By: gtourdia <@student.42mulhouse.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 15:28:30 by gtourdia          #+#    #+#             */
-/*   Updated: 2025/11/17 11:30:28 by gtourdia         ###   ########.fr       */
+/*   Updated: 2025/11/17 11:42:53 by gtourdia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int	print_arg(va_list *arg, char c)
 		return (ft_printf_putstr(va_arg(*arg, char*)));
 	if (c == 'd')
 		return (ft_printf_putnbr(va_arg(*arg, int)));
+	if (c == 'c')
+		return (ft_printf_putchar(va_arg(*arg, int)));
 	return (0);
 }
 
