@@ -6,7 +6,7 @@
 /*   By: gtourdia <@student.42mulhouse.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 15:28:30 by gtourdia          #+#    #+#             */
-/*   Updated: 2025/11/17 11:42:53 by gtourdia         ###   ########.fr       */
+/*   Updated: 2025/11/17 15:52:08 by gtourdia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	print_arg(va_list *arg, char c)
 		return (ft_printf_putnbr(va_arg(*arg, int)));
 	if (c == 'c')
 		return (ft_printf_putchar(va_arg(*arg, int)));
+	if (c == 'p')
+		return (ft_printf_putptr(va_arg(*arg, long)));
 	return (0);
 }
 
@@ -50,12 +52,10 @@ int	ft_printf(const char *s, ...)
 {
 	va_list	args;
 	int		i;
-	int		count;
 	int		pfvalue;
 
 	va_start(args, s);
 	i = -1;
-	count = -1;
 	pfvalue = 0;
 	while (s[++i])
 	{
@@ -65,10 +65,7 @@ int	ft_printf(const char *s, ...)
 			pfvalue++;
 		}
 		else
-		{
 			pfvalue += print_arg(&args, s[++i]);
-			count++;
-		}
 	}
 	va_end(args);
 	return (pfvalue);

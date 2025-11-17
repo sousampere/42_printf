@@ -6,7 +6,7 @@
 /*   By: gtourdia <@student.42mulhouse.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 18:59:43 by gtourdia          #+#    #+#             */
-/*   Updated: 2025/11/17 11:42:40 by gtourdia         ###   ########.fr       */
+/*   Updated: 2025/11/17 14:52:40 by gtourdia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ int	ft_printf(const char *, ...)__attribute__((format(printf, 1, 2)));
 int	ft_printf_putstr(char *str);
 int	ft_printf_putnbr(int nbr);
 int	ft_printf_putchar(char c);
+int	ft_printf_putptr(long n);
 
 #endif
