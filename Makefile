@@ -1,4 +1,3 @@
-
 NAME=libftprintf.a
 C=cc
 C_FLAGS=-Wall -Wextra -Werror

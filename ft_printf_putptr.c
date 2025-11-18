@@ -6,12 +6,13 @@
 /*   By: gtourdia <@student.42mulhouse.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 11:47:58 by gtourdia          #+#    #+#             */
-/*   Updated: 2025/11/18 14:10:32 by gtourdia         ###   ########.fr       */
+/*   Updated: 2025/11/18 18:36:50 by gtourdia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft/libft.h"
+#include "limits.h"
 
 char	*make_str_hex_address(char *str)
 {
@@ -20,7 +21,7 @@ char	*make_str_hex_address(char *str)
 	int		ii;
 	int		len;
 
-	hex_str = ft_calloc(11, sizeof(char));
+	hex_str = ft_calloc(50, sizeof(char));
 	len = ft_strlen(str);
 	hex_str[0] = '0';
 	hex_str[1] = 'x';
@@ -38,11 +39,12 @@ char	*make_str_hex_address(char *str)
 	return (hex_str);
 }
 
-int	ft_printf_putptr(long n)
+int	ft_printf_putptr(unsigned long n)
 {
 	int		i;
-	char	str[20];
+	char	str[50];
 	char	*hex_base;
+	char	*hex_address;
 
 	if (n == 0)
 		return (write(1, "(nil)", 5));
@@ -54,5 +56,8 @@ int	ft_printf_putptr(long n)
 		n /= 16;
 	}
 	str[++i] = '\0';
-	return (ft_printf_putstr(make_str_hex_address(str)));
+	hex_address = make_str_hex_address(str);
+	i = write(1, hex_address, ft_strlen(hex_address));
+	free(hex_address);
+	return (i);
 }
