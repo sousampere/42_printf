@@ -6,7 +6,7 @@
 /*   By: gtourdia <@student.42mulhouse.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 11:47:58 by gtourdia          #+#    #+#             */
-/*   Updated: 2025/11/18 18:36:50 by gtourdia         ###   ########.fr       */
+/*   Updated: 2025/11/18 19:45:34 by gtourdia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ char	*make_str_hex_address(char *str)
 	hex_str[0] = '0';
 	hex_str[1] = 'x';
 	i = 2;
-	// while (i + len < 10)
-	// 	hex_str[i++] = 'F';
 	ii = 0;
 	while (len + 1 > i - 1)
 	{

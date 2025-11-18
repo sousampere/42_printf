@@ -6,7 +6,7 @@
 /*   By: gtourdia <@student.42mulhouse.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 18:06:46 by gtourdia          #+#    #+#             */
-/*   Updated: 2025/11/17 19:51:37 by gtourdia         ###   ########.fr       */
+/*   Updated: 2025/11/18 19:46:08 by gtourdia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	put_hex_positive(long value)
 	return (0);
 }
 
-static int put_hex_negative(long value)
+static int	put_hex_negative(long value)
 {
 	int		i;
 	char	str[10];
