@@ -1,7 +1,6 @@
-NAME=printf.a
+NAME=ft_printf.a
 C=cc
 C_FLAGS=-Wall -Wextra -Werror
-H_FILE=printf.h
 LIB_COMP=ar rcs
 C_FILES=ft_printf_putchar.c\
 		ft_printf_putnbr.c\
@@ -9,7 +8,8 @@ C_FILES=ft_printf_putchar.c\
 		ft_printf_putstr.c\
 		ft_printf_putuint.c\
 		ft_printf_putxmaj.c\
-		ft_printf_putxmin.c
+		ft_printf_putxmin.c\
+		ft_printf.c
 O_FILES=$(C_FILES:.c=.o)
 LIBFT_A=libft/libft.a
 LIBFT_DIR=libft/
