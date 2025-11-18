@@ -6,7 +6,7 @@
 /*   By: gtourdia <@student.42mulhouse.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 15:28:30 by gtourdia          #+#    #+#             */
-/*   Updated: 2025/11/17 19:38:50 by gtourdia         ###   ########.fr       */
+/*   Updated: 2025/11/18 14:39:21 by gtourdia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,11 @@ int	print_arg(va_list *arg, char c)
 	if (c == '%')
 		return (write(1, "%", 1));
 	if (c == 'x')
-		return (ft_printf_putxmin(va_arg(*arg, int)));
+		return (ft_printf_putxmin(va_arg(*arg, unsigned int)));
 	if (c == 'X')
-		return (ft_printf_putxmaj(va_arg(*arg, int)));
+		return (ft_printf_putxmaj(va_arg(*arg, unsigned int)));
+	if (c == 'u')
+		return (ft_printf_putuint(va_arg(*arg, int)));
 	return (0);
 }
 
