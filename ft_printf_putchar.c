@@ -6,13 +6,13 @@
 /*   By: gtourdia <@student.42mulhouse.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 11:39:59 by gtourdia          #+#    #+#             */
-/*   Updated: 2025/11/18 19:45:20 by gtourdia         ###   ########.fr       */
+/*   Updated: 2025/11/19 16:06:33 by gtourdia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf_putchar(char c)
+int	ft_printf_putchar(unsigned int c)
 {
 	return (write (1, &c, 1));
 }

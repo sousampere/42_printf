@@ -6,7 +6,7 @@
 /*   By: gtourdia <@student.42mulhouse.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 15:28:30 by gtourdia          #+#    #+#             */
-/*   Updated: 2025/11/18 19:42:55 by gtourdia         ###   ########.fr       */
+/*   Updated: 2025/11/19 16:07:05 by gtourdia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	print_arg(va_list *arg, char c)
 	if (c == 'd' || c == 'i')
 		return (ft_printf_putnbr(va_arg(*arg, int)));
 	if (c == 'c')
-		return (ft_printf_putchar(va_arg(*arg, int)));
+		return (ft_printf_putchar(va_arg(*arg, unsigned int)));
 	if (c == 'p')
 		return (ft_printf_putptr(va_arg(*arg, unsigned long)));
 	if (c == '%')
