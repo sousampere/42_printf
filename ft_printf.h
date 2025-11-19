@@ -6,7 +6,7 @@
 /*   By: gtourdia <@student.42mulhouse.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 18:59:43 by gtourdia          #+#    #+#             */
-/*   Updated: 2025/11/18 19:45:10 by gtourdia         ###   ########.fr       */
+/*   Updated: 2025/11/19 14:44:02 by gtourdia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdarg.h>
 # include <unistd.h>
 
-int	ft_printf(const char *s, ...);
+int	ft_printf(const char *s, ...)__attribute__((format(printf, 1, 2)));
 
 int	ft_printf_putstr(char *str);
 int	ft_printf_putnbr(int nbr);
