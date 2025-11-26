@@ -62,6 +62,8 @@ int	ft_printf(const char *s, ...)
 	int		i;
 	int		pfvalue;
 
+	if (!str || write(1, "", 0) == -1)
+		return (-1);
 	va_start(args, s);
 	i = -1;
 	pfvalue = 0;
